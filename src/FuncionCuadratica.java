@@ -17,17 +17,14 @@ public class FuncionCuadratica {
             System.out.println("La raiz es negativa.");
         }
         else{
-            resu = resu / (2 * a);
-
-            x1 = -b + resu;
-            x2 = -b - resu;
+            x1 = (b * -1 + resu) / (2 * a);
+            x2 = (b * -1 - resu) / (2 * a);
 
 
             System.out.println("X1 es: " + x1);
             System.out.println("X2 es: " + x2);
 
         }
-
 
 
     }
