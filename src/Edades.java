@@ -1,52 +1,31 @@
 import java.util.Scanner;
 public class Edades {
     public static void main(String[] args) {
-        int edades,promedio,contador,escape;
+        int edad,edades,promedio,contador;
         contador = 0;
+        edades = 0;
         Scanner entrada = new Scanner(System.in);
 
-        System.out.println("Introduzca la edad, se aceptan numeros del 1 al 115.");
-        edades = entrada.nextInt();
+        System.out.print("Introduzca la edad: ");
+        edad = entrada.nextInt();
+        while(edad == 0 || edad >115){
+                System.out.print("Vuelva a ingresar la edad: ");
+                edad = entrada.nextInt();
+        }
+        while (edad > 0) {
 
-        while (true){
+                contador++;
+                edades = edades + edad;
+                promedio = edades / contador;
 
-            contador++;
-            promedio = edades / contador;
-            System.out.println("La suma es: " + edades + "\n El promedio es: " + promedio);
+                System.out.println("La suma es: " + edades + "\n El promedio es: " + promedio);
 
-            System.out.println("¿Desea cerrar el programa?" + "\n Si es asi, introduzca un numero negativo");
-            escape = entrada.nextInt();
-
-            if(escape <0)
-                 break;
-
-             System.out.println("Introduzca la siguiente edad:");
-            edades = edades + entrada.nextInt();
+                System.out.print("Introduzca la siguiente edad: ");
+                edad = entrada.nextInt();
 
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 
+
 }
+

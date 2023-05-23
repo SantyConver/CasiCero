@@ -4,15 +4,14 @@ public class ParImparPotencia {
 
         double num, potencia;
         Scanner entrada = new Scanner(System.in);
-        num = 1;
 
+        System.out.print("\nIngrese el numero a evaluar: ");
+        num = entrada.nextInt();
 
         while (num != 0) {
-            System.out.println("\nIngrese el numero a evaluar");
-            num = entrada.nextDouble();
 
             if(num % 2 == 0){
-                System.out.println("El numero ingresado es par");
+                System.out.println("El numero ingresado es par.");
 
                 potencia = Math.pow(num , 2);
                 System.out.println("El numero ingresado elevado al cuadrado es: "+ potencia);
@@ -24,11 +23,10 @@ public class ParImparPotencia {
                 potencia = Math.pow(num , 2);
                 System.out.println("El numero ingresado elevado al cuadrado es: "+ potencia);
             }
-
-            System.out.println("\n¿Desea salir del programa? Si es asi ingrese 0 sino ingrese 1");
-            num = entrada.nextDouble();
+            System.out.println("Ingrese el siguiente numero: ");
+            num = entrada.nextInt();
         }
-
+        System.out.println("el programa ha finalizado.");
 
 
 
