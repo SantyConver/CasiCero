@@ -20,20 +20,22 @@ public class Calculadora {
             switch(opcion){
 
                 case 1:
-                    System.out.print("\nIngrese los valores a sumar: ");
+                    System.out.print("\nIngrese el primer valor a sumar: ");
                     a = entrada.nextDouble();
+                    System.out.print("\nIngrese el segundo valor a sumar: ");
                     b = entrada.nextDouble();
 
-                    resu = a + b;
-                    System.out.println("El resultado es: "+resu);
+                    resu = sumar(a , b);
+                    System.out.println(a+" + "+b+" = "+resu);
                     break;
                 case 2:
-                    System.out.print("\nIngrese los valores a restar: ");
+                    System.out.print("\nIngrese el minuendo: ");
                     a = entrada.nextDouble();
+                    System.out.print("\nIngrese el sustraendo: ");
                     b = entrada.nextDouble();
 
                     resu = a - b;
-                    System.out.println("El resultado es: "+resu);
+                    System.out.println(a+" - "+b+" = "+resu);
                     break;
                 case 3:
                     System.out.print("\nIngrese el multiplicando: ");
@@ -42,7 +44,7 @@ public class Calculadora {
                     b = entrada.nextDouble();
 
                     resu = a * b;
-                    System.out.println("El producto es: "+resu);
+                    System.out.println(a+" x "+b+" = "+resu);
                     break;
                 case 4:
                     System.out.print("\nIngres el dividendo: ");
@@ -51,7 +53,7 @@ public class Calculadora {
                     b = entrada.nextDouble();
 
                     resu = a / b;
-                    System.out.println("El cociente es: "+resu);
+                    System.out.println(a+" / "+b+" = "+resu);
                     resu = a % b;
                     System.out.println("El resto es: "+resu);
                     break;
@@ -64,11 +66,26 @@ public class Calculadora {
                     resu= Math.pow(a , b);
                     System.out.println("La potencia es: "+resu);
                     break;
+
+                case 6:
+                    System.out.println("¡El programa a finalizado con exito!");
+                    break;
+                default:
+                    System.out.println("\nOpcion invalida\n");
+                    break;
             }
+
 
         }while(opcion !=6);
 
 
 
     }
+
+     public static double sumar (double num1, double num2){
+        double resu;
+        resu = num1 + num2;
+        return resu;
+    }
+
 }
