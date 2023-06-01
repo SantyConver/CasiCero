@@ -3,30 +3,66 @@ import java.util.Scanner;
 public class Calculadora {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
-        int opcion;
+        byte opcion;
         double a, b, resu;
+        opcion = 0;
+
+
+        calculadora(opcion);
+
+    }
+
+    public static void sumar() {
+        Scanner entrada = new Scanner(System.in);
+        double valores, acumulador;
+        acumulador = 0;
+        valores = 0;
+        System.out.println("\nIngrese valores a sumar, para finalizar ingrese \"0\".");
 
         do {
-            System.out.println("-----CALCULADORA-----");
-            System.out.println("Opcion 1: Suma");
-            System.out.println("Opcion 2: Resta");
-            System.out.println("Opcion 3: Multiplicacion");
-            System.out.println("Opcion 4: Division");
-            System.out.println("Opcion 5: Potencia");
-            System.out.println("Opcion 6; Salir");
-            System.out.print("\nElija la opcion: ");
-            opcion = entrada.nextInt();
+            valores = entrada.nextDouble();
+            acumulador = acumulador + valores;
+
+
+        }while(valores != 0);
+
+        System.out.println("El resultado es: "+acumulador);
+    }
+
+
+    public static byte imprimirMenu() {
+        byte opcion;
+        Scanner entrada = new Scanner(System.in);
+
+        System.out.println("-----CALCULADORA-----");
+        System.out.println("Opcion 1: Suma");
+        System.out.println("Opcion 2: Resta");
+        System.out.println("Opcion 3: Multiplicacion");
+        System.out.println("Opcion 4: Division");
+        System.out.println("Opcion 5: Potencia");
+        System.out.println("Opcion 6; Salir");
+        System.out.print("\nElija la opcion: ");
+        opcion = entrada.nextByte();
+
+        return opcion;
+    }
+   public static void calculadora(byte opcion){
+        Scanner entrada = new Scanner(System.in);
+
+        double a, b, resu;
+        opcion = 0;
+
+        do {
+
+            opcion = imprimirMenu();
 
             switch(opcion){
 
                 case 1:
-                    System.out.print("\nIngrese el primer valor a sumar: ");
-                    a = entrada.nextDouble();
-                    System.out.print("\nIngrese el segundo valor a sumar: ");
-                    b = entrada.nextDouble();
 
-                    resu = sumar(a , b);
-                    System.out.println(a+" + "+b+" = "+resu);
+                    sumar();
+
+
                     break;
                 case 2:
                     System.out.print("\nIngrese el minuendo: ");
@@ -78,14 +114,5 @@ public class Calculadora {
 
         }while(opcion !=6);
 
-
-
     }
-
-     public static double sumar (double num1, double num2){
-        double resu;
-        resu = num1 + num2;
-        return resu;
-    }
-
 }
