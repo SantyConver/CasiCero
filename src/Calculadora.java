@@ -8,8 +8,6 @@ public class Calculadora {
         opcion = 0;
 
 
-        calculadora(opcion);
-
     }
 
     public static void sumar() {
